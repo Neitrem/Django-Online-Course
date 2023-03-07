@@ -1,23 +1,29 @@
+{% load static %}
 {% include "../header.html" %}
 
-<button  class="open-form-btn btn btn-secondary" onclick="openForm()">Create new course</button>
-<div  class="create-new" style="display: none;">
-    <div  class="new-item-form">
+<div class="lesson-list-wrap">
 
-        <form  class="join-form">
-            <div class="form-group">
-                <label for="name">Course name</label>
-                <input  type="text" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter name">
-            </div>
-            <div class="form-group">
-                <label for="description">Course description</label>
-                <input  type="text" class="form-control" id="description" placeholder="Enter description">
-            </div>
-            <button  onclick="closeForm()" type="submit" class="btn btn-primary">Submit</button>
-        </form>
+    {% include "./new_lesson_menu.html" %}
+
+
+    <div class="items-container">
+        {% for course in courses %}
+        <div class="lesson">
+            <a 
+                class="link" 
+                href=""
+            >
+                <img src="{% static 'img/man-computer-book.png' %}" alt="lesson-preview" class="lesson__img">
+                <div class="lesson__text-block">
+                    <h3 class="lesson__name">{{ course.title }}</h3>
+                    <p class="lesson__description">{{ course.description }}</p>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
     </div>
-</div>
 
+</div>
 
 
 

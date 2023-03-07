@@ -1,5 +1,6 @@
 {% include "../header.html" %}
-
+{% load static %}
+{% url 'courses:courses_index' as courses %}
 
 
 
@@ -9,11 +10,10 @@
             <h2 class="section-main">Учитесь там, где есть интернет</h2>
             <p class="text">Онлайн-школа с 1 по 11 класс для тех, кто не может посещать обычную школу. Учитесь, где удобно и когда удобно!</p>
         </div>
-        {% load static %}
+        
         <img src="{% static 'img/man-computer-book.png' %}"  alt="man-computer-book" class="medium-img">
     </section>
     <section class="info-block right">
-        {% load static %}
         <img src="{% static 'img/man-screen-book.png' %}"  alt="man-computer-book" class="medium-img">
         <div  class="text-block">
             <h2 class="section-main">ОНЛАЙН-ШКОЛА</h2>
@@ -24,8 +24,9 @@
         
     </section>
     <a 
-            class="to-lessons-btn btn btn-primary" 
-        >
+        class="to-lessons-btn btn btn-primary" 
+        href="{{ courses }}"
+    >
         Посмотреть курсы
     </a>
     
