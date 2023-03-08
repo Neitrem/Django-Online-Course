@@ -9,7 +9,13 @@ class CourseViewSet(ModelViewSet):
     queryset = Course.objects.all()
     serializer_class = CourseSerializer
     
-def courses_index(request):
+def index(request):
     courses = Course.objects.all()
     context = {'courses': courses}
     return render(request, 'courses/index.html', context)
+
+def show(request, id):
+    course = Course.objects.get(pk=id)
+    context = {'course': course}
+    
+    return render(request, 'courses/show.html', context)

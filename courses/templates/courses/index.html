@@ -1,29 +1,28 @@
 {% load static %}
 {% include "../header.html" %}
 
-<div class="lesson-list-wrap">
+
 
     {% include "./new_lesson_menu.html" %}
 
 
-    <div class="items-container">
+    <div class="items-container ">
         {% for course in courses %}
         <div class="lesson">
             <a 
                 class="link" 
-                href=""
+                href="{{ course.id }}"
             >
                 <img src="{% static 'img/man-computer-book.png' %}" alt="lesson-preview" class="lesson__img">
                 <div class="lesson__text-block">
                     <h3 class="lesson__name">{{ course.title }}</h3>
-                    <p class="lesson__description">{{ course.description }}</p>
+                    <p class="lesson__description">{{ course.description|truncatewords:15 }}</p>
                 </div>
             </a>
         </div>
         {% endfor %}
     </div>
 
-</div>
 
 
 

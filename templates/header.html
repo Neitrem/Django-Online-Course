@@ -1,5 +1,5 @@
 {% load static %}
-{% url 'courses:courses_index' as courses %}
+{% url 'courses:index' as courses %}
 {% url 'main' as main %}
 
 
@@ -17,7 +17,7 @@
 
     
     <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" />
-    <script src="{% static 'js/courses.js' %}"></script>
+    <script src="{% static 'courses/js/courses.js' %}"></script>
  
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
@@ -25,18 +25,16 @@
   <body>
 
 <header class="header">
-    <div class="container__left">
-        <div class="inner"> 
-            <div class="logo">
-                <p class="logo__text">
-                    WEBclass
-                </p>
-            </div>
+    <div class="inner container-left"> 
+        <div class="logo">
+            <p class="logo__text">
+                WEBclass
+            </p>
         </div>
     </div>
-    
+  
 
-    <div class="inner right-inner">
+    <div class="inner container-right row-flex">
         <div class="search">
             <input class="search__input" type="text" placeholder="Поиск">
         </div>
@@ -51,30 +49,29 @@
 
         
 
-  </header>
+</header>
 
     <main class="main-container">
-        <div class="left-menu-wrap">
-            <div class="container__left">
-                <ul class="menu">
-                    <li class="menu-item">
-                        <a 
-                            class="menu-item__button" 
-                            href="{{ main }}"
-                        >
-                            <button type="button" class="btn btn-primary menu-item__button">Главная</button>
-                        </a>
-                    </li>
-                    <li class="menu-item">
-                        <a 
-                            class="menu-item__button"
-                            href="{{ courses }}"
-                        >
-                            <button type="button" class="btn btn-primary menu-item__button">Курсы</button>
-                        </a>
-                    </li>
-                    
-                </ul>
-            </div>
+        <div class="container-left column-flex">
+            <ul class="menu">
+                <li class="menu-item">
+                    <a 
+                        class="menu-item__button btn btn-primary" 
+                        href="{{ main }}"
+                    >
+                        Главная
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a 
+                        class="menu-item__button btn btn-primary"
+                        href="{{ courses }}"
+                    >
+                        Курсы
+                    </a>
+                </li>
+                
+            </ul>
         </div>
+        <div class="container-right column-flex">
  
