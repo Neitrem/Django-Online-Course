@@ -1,0 +1,13 @@
+.footer {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  height: 50px;
+  background: #000;
+}
+.footer__button {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 90px;
+  background: none;
+}/*# sourceMappingURL=footer.css.map */

@@ -1,0 +1,12 @@
+.items-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+
+.lessons-list {
+    margin: 40px 0;
+}

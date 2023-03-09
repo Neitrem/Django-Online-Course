@@ -1,0 +1,17 @@
+.footer
+{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    height: 50px;
+    background: #000;
+
+    &__button {
+        color: #fff;
+        text-decoration: none;
+        margin-right: 90px;
+
+        background: none;
+    }
+}
+

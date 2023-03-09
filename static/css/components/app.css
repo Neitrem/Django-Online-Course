@@ -1,0 +1,74 @@
+a
+{
+	text-decoration: none;
+	color: #000;
+}
+
+h2 {
+	font-size: 40px
+}
+
+
+
+#app {
+  	font-family: Avenir, Helvetica, Arial, sans-serif;
+  	-webkit-font-smoothing: antialiased;
+  	-moz-osx-font-smoothing: grayscale;
+  
+  	color: #2c3e50;
+}
+
+*{
+	font-size: 15px;
+	margin-block-start: 0;
+	margin-block-end: 0;
+	margin-inline-start: 0px;
+	margin-inline-end: 0px;
+	padding-inline-start: 0;
+	
+	text-decoration: none  !important;
+}
+
+.medium-img
+{
+    display: block;
+    position: relative;
+    width: 500px;
+    height: 450px;
+}
+
+.container-left
+{
+	width: 30%;
+	border-right: 1px gray solid;
+}
+
+.container-right
+{
+	width: 70%;
+	justify-content: space-between;
+}
+
+.router-container
+{
+  	display: block;;
+	width: 80%;
+}
+
+.main-container
+{
+	display: flex;
+}
+
+.row-flex {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.column-flex {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
