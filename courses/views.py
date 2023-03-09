@@ -1,4 +1,6 @@
 from courses.models import Course
+from comments.models import Comment
+
 from courses.serializers import CourseSerializer
 from django.shortcuts import render
 from rest_framework.viewsets import ModelViewSet
@@ -16,6 +18,7 @@ def index(request):
 
 def show(request, id):
     course = Course.objects.get(pk=id)
-    context = {'course': course}
+    comments = Comment.objects.filter(course_id_id=id)
+    context = {'course': course, 'comments': comments}
     
     return render(request, 'courses/show.html', context)
