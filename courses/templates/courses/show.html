@@ -15,7 +15,8 @@
 </div>
 <div v-if="lesson" class="description">
     <p class="description__text">{{ course.description }}</p>
-    <img src="@/assets/lesson-preview.png" class="medium-img" alt="">
+
+    <img src="{% static 'img/man-computer-book.png' %}" class="medium-img" alt="">
 </div>
 <button onclick="openModalWindow()" class="join btn btn-primary">Записаться</button>
 
@@ -24,20 +25,21 @@
 <div class="reviews">
     <h3 v-if="reviews" class="title">Отзывы</h3>
     <button onclick="openReviewForm()" type="button" class="btn btn-secondary menu-item__button">Оставить озыв</button>
-    <div v-if="this.newReviewForm.isOpen" class="new-review-form">
-        <form @submit.prevent class="join-form">
+    <div  class="new-review-form">
+        <form class="join-form">
             
             <div class="inp">
                 <p  class="inp__description">Текст отзыва: <button  onclick="closeReviewForm()" class=" btn btn-light close">Close</button></p>
-                <input v-model="this.newReviewForm.text" type="text" class="inp__text" placeholder="Введите текст" name="name"  required >
+                <input type="text" class="inp__text" placeholder="Введите текст" name="name"  required >
             </div>
 
-            <button  @click="checkReviewForm()"  class="review-submit-btn btn btn-primary">Оставить отзыв</button>
-            <p class="mark">Коментарий будет проверен модератором</p>
+            <button  onclick="checkReviewForm()"  class="review-submit-btn btn btn-primary">Оставить отзыв</button>
         </form>
     </div>
     <div class="reviews__container">
-        <MyReview v-bind:review="review" v-for="review in reviews" v-bind:key="review"></MyReview>
+        {% for review in reviews %}
+            
+        {% endfor %}
     </div>
 </div>
 

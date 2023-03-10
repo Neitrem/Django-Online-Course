@@ -25,7 +25,7 @@ class User(AbstractBaseUser, PermissionsMixin):
                                 choices=ROLE_CHOICES, default=STUDENT, null=True)
     
     is_active = models.BooleanField(verbose_name='Is active', default=False)
-    is_staff = models.BooleanField(verbose_name='Is staff', default=False)
+    is_staff = models.BooleanField(verbose_name='Is staff', default=False, blank=True)
     is_superuser = models.BooleanField(verbose_name='Is superuser', default=False)
     
     objects = UserManager()
