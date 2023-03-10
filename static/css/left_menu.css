@@ -25,6 +25,9 @@
 }
 
 @media (max-width: 768px) {
+  .menu {
+    width: 90%;
+  }
   .menu-item {
     height: 40px;
   }

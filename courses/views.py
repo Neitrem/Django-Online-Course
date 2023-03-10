@@ -18,7 +18,7 @@ def index(request):
 
 def show(request, id):
     course = Course.objects.get(pk=id)
-    comments = Comment.objects.filter(course_id_id=id)
-    context = {'course': course, 'comments': comments}
+    reviews = Comment.objects.filter(course_id_id=id)
+    context = {'course': course, 'reviews': reviews}
     
     return render(request, 'courses/show.html', context)

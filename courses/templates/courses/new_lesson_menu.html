@@ -1,8 +1,9 @@
-<button  class="form-btn btn btn-secondary" id="open-form" onclick="openForm()">Создать новый курс</button>
+<button  class="form-btn btn btn-secondary" id="open-form" onclick="openNewLessonForm()">Создать новый курс</button>
 <div  class="create-new" style="display: none;">
     <div  class="new-item-form">
 
-        <form  class="join-form">
+        <form id="new-lesson-form"  class="join-form">
+            {% csrf_token %}
             <div class="form-group">
                 <label for="name">Название курса</label>
                 <input  type="text" class="form-control" id="name"  placeholder="Enter name">
@@ -19,7 +20,7 @@
                 <label for="duration">Продолжительность курса</label>
                 <input  type="text" class="form-control" id="duration" placeholder="Enter name">
             </div>
-            <button  onclick="closeForm()" type="submit" class="form-btn btn btn-primary">Подтвердить</button>
+            <button  onclick="closeNewLessonForm()" type="submit" class="form-btn btn btn-primary">Подтвердить</button>
         </form>
     </div>
 </div>

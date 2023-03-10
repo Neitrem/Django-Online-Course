@@ -5,42 +5,46 @@
 
 {% include "./modal-window.html" %}
 
-
-<h2 v-if="lesson" class="name">
-    {{ course.title }}
-</h2>
-<div class="params">
-    <p v-if="lesson" class="cost param">Цена: <span class="value">{{ course.cost }}</span> р.</p>
-    <p v-if="lesson" class="duration param">Продолжительность: <span class="value">{{ course.duration }} </span>мес.</p>
-</div>
-<div v-if="lesson" class="description">
-    <p class="description__text">{{ course.description }}</p>
-
-    <img src="{% static 'img/man-computer-book.png' %}" class="medium-img" alt="">
-</div>
-<button onclick="openModalWindow()" class="join btn btn-primary">Записаться</button>
-
-
-
-<div class="reviews">
-    <h3 v-if="reviews" class="title">Отзывы</h3>
-    <button onclick="openReviewForm()" type="button" class="btn btn-secondary menu-item__button">Оставить озыв</button>
-    <div  class="new-review-form">
-        <form class="join-form">
-            
-            <div class="inp">
-                <p  class="inp__description">Текст отзыва: <button  onclick="closeReviewForm()" class=" btn btn-light close">Close</button></p>
-                <input type="text" class="inp__text" placeholder="Введите текст" name="name"  required >
-            </div>
-
-            <button  onclick="checkReviewForm()"  class="review-submit-btn btn btn-primary">Оставить отзыв</button>
-        </form>
+<div class="lesson-show">
+    <h2  class="lesson-show__name">
+        {{ course.title }}
+    </h2>
+    <div class="lesson-show__params">
+        <p class="lesson-show__params__cost lesson-show__params-param">Цена: <span class="value">{{ course.cost }}</span> р.</p>
+        <p class="lesson-show__params__duration lesson-show__params-param">Продолжительность: <span class="value">{{ course.duration }} </span>мес.</p>
     </div>
-    <div class="reviews__container">
-        {% for review in reviews %}
-            
-        {% endfor %}
+    <div class="lesson-show__description">
+        <p class="lesson-show__description__text">{{ course.description }}</p>
+    
+        <img src="{% static 'img/man-computer-book.png' %}" class="medium-img" alt="">
     </div>
+    <button onclick="openModalWindow()" class="join btn btn-primary">Записаться</button>
+    
+    
+    
+    <div class="reviews">
+        <h3 class="reviews__title">Отзывы</h3>
+        <button onclick="openReviewForm()" type="button" class="btn btn-secondary send-review">Оставить озыв</button>
+        <div  class="reviews__new-review-form" style="display: none;">
+            <form class="join-form">
+                <div class="inp">
+                    <p  class="inp__description">Текст отзыва: <button  onclick="closeReviewForm()" class=" btn btn-light close">Close</button></p>
+                    <input type="text" class="inp__text" placeholder="Введите текст" name="name"  required >
+                </div>
+    
+                <button  onclick="checkReviewForm()"  class="review-submit-btn btn btn-primary">Оставить отзыв</button>
+            </form>
+        </div>
+        <div class="reviews__container">
+            {% for review in reviews %}
+                <div class="reviews__container-review">
+                    <img class="review-character">
+                    <p></p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    
 </div>
 
 {% include "../footer.html" %}

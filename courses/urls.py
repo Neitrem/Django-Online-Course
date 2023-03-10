@@ -7,5 +7,5 @@ app_name='courses'
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('{id}', views.show, name='show')
+    path('<str:id>', views.show, name='show')
 ]

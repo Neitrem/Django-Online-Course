@@ -37,6 +37,19 @@ h2 {
     height: 450px;
 }
 
+@media (max-width: 1500px) {
+	.medium-img {
+		width: 300px;
+		height: 250px;
+	}
+}
+
+@media (max-width: 768px) {
+	.medium-img {
+		display: none;
+	}
+}
+
 .container-left
 {
 	width: 30%;

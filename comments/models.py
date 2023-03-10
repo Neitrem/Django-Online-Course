@@ -13,7 +13,7 @@ class Comment(models.Model):
     
     history = HistoricalRecords()
     def __str__(self):
-        return self.user_id.pk
+        return str(self.user_id.pk)
     
     
     class Meta:
