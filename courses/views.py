@@ -2,10 +2,12 @@ from courses.models import Course
 from comments.models import Comment
 
 from courses.serializers import CourseSerializer
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from rest_framework.viewsets import ModelViewSet
 
-from .models import Course
+from courses.forms import CourseForm
+
+from courses.models import Course
 
 class CourseViewSet(ModelViewSet):
     queryset = Course.objects.all()
@@ -13,7 +15,8 @@ class CourseViewSet(ModelViewSet):
     
 def index(request):
     courses = Course.objects.all()
-    context = {'courses': courses}
+    form = CourseForm()
+    context = {'courses': courses, 'form': form}
     return render(request, 'courses/index.html', context)
 
 def show(request, id):
@@ -22,3 +25,38 @@ def show(request, id):
     context = {'course': course, 'reviews': reviews}
     
     return render(request, 'courses/show.html', context)
+
+def create(request):
+    if request.method == "POST":
+        form = CourseForm(request.POST)
+        if form.is_valid():
+            try:
+                form.save()
+                return redirect("courses:index")
+            except Exception as e:
+                print(e)
+    else:
+        form = CourseForm()
+    
+    courses = Course.objects.all()
+    return render(request, 'courses/index.html', { 'form': form, 'courses': courses })
+    
+def edit(request, id):
+    course = Course.objects.get(id=id)
+    form = CourseForm
+    return render(request, 'courses/edit.html', { 'course': course, 'form': form  })
+
+def update(request, id):
+    course = Course.objects.get(id=id)
+    form = CourseForm(request.POST, instance=course)
+    if form.is_valid():
+        form.save()
+        return redirect("courses:show", id=id)
+    
+    return render(request, 'courses/edit.html', { 'course': course, 'form': form })
+
+def delete(request, id):
+    course = Course.objects.get(id=id)
+    course.delete()
+    return redirect('/courses')
+            

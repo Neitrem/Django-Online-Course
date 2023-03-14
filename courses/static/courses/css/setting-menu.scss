@@ -1,0 +1,23 @@
+.setting-menu-container {
+    position: absolute;
+
+    right: 10px;
+
+    .setting-btn {
+        background: none;
+        border: none;
+
+        svg {
+            width: 30px;
+            height: 30px;
+        }
+    }
+
+    .setting-menu
+    {
+        display: none;
+        &-item {
+            margin: 5px;
+        }
+    }
+}

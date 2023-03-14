@@ -3,7 +3,5 @@
 @import "components/footer.css";
 @import "components/header.css";
 @import "components/left_menu.css";
-@import "../courses/css/new_lesson_form.css";
-@import "../courses/css/lesson_link.css";
-@import "../courses/css/lesson_list.css";
-@import "../courses/css/lesson.css";/*# sourceMappingURL=style.css.map */
+@import "../courses/css/lesson.css";
+@import "../courses/css/modal-window.css";/*# sourceMappingURL=style.css.map */

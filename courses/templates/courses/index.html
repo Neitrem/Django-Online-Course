@@ -1,7 +1,7 @@
 {% load static %}
 {% include "../header.html" %}
 
-
+    
 
     {% include "./new_lesson_menu.html" %}
 
@@ -11,7 +11,7 @@
         <div class="lesson">
             <a 
                 class="link" 
-                href="{{ course.id }}"
+                href="/courses/{{ course.id }}"
             >
                 <img src="{% static 'img/man-computer-book.png' %}" alt="lesson-preview" class="lesson__img">
                 <div class="lesson__text-block">

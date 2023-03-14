@@ -1,0 +1,57 @@
+
+.modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.65);
+    display: none;
+    overflow: auto;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    
+
+    backdrop-filter: blur(10px);
+}
+
+.modal-window {
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    top: 25%;
+
+    &__title {
+        color: #fff;
+        font-size: 40px;
+        margin-bottom: 20px;
+    }
+
+    .join-form {
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+
+        .inp {
+            font-size: 20px;
+            &__description {
+                font-size: 20px;
+                color: #fff;
+            }
+            width: 90%;
+        }
+    
+        .modal-submit-btn {
+            margin: 20px auto;
+            display: inline;
+        }
+    }
+
+    
+
+}

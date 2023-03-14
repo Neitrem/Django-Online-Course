@@ -1,4 +1,8 @@
 @import "./review.css";
+@import "./new_lesson_form.css";
+@import "./lesson_link.css";
+@import "./lesson_list.css";
+@import "./setting-menu.css";
 .lesson-show {
   width: 100%;
   display: flex;

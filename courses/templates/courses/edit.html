@@ -1,8 +1,14 @@
-<button  class="form-btn btn btn-secondary" id="open-form" onclick="openNewLessonForm()">Создать новый курс</button>
-<div  class="create-new" style="display: none;">
+
+{% load static %}
+{% load getattribute %}
+
+
+{% include "../header.html" %}
+
+<div  class="create-new">
     <div  class="new-item-form">
 
-        <form method="POST" action="{% url 'courses:create' %}" id="new-lesson-form"  class="join-form">
+        <form method="POST" action="{% url 'courses:update' id=course.id %}" id="new-lesson-form"  class="join-form">
             {% csrf_token %}
             {% if form %}
                 {% for field in form %}
@@ -14,7 +20,7 @@
                         <div class="form-group">
                 
                             <label for="{{ field.name }}">{{ field.label }} курса</label>
-                            <input  type="text" class="form-control" name="{{ field.name }}" id="{{ field.name }}"  placeholder="Enter {{ field.name }}">
+                            <input  type="text" class="form-control" name="{{ field.name }}" id="{{ field.name }}"  value="{{ course|getattribute:field.name }}">
                         </div>
                 {% endfor %}
 
@@ -24,3 +30,6 @@
         </form>
     </div>
 </div>
+
+
+{% include "../footer.html" %}
