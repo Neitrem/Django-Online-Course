@@ -12,6 +12,23 @@
 	height: 135px;
 }
 
+.search {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+
+	position: relative;
+}
+
+.search-btn {
+	position: absolute;
+	right: 5px;
+}
+
+.search-btn  svg{
+	width: 25px;
+	height: 25px;
+}
 
 
 .icon 

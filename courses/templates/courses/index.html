@@ -7,20 +7,27 @@
 
 
     <div class="items-container ">
-        {% for course in courses %}
-        <div class="lesson">
-            <a 
-                class="link" 
-                href="/courses/{{ course.id }}"
-            >
-                <img src="{% static 'img/man-computer-book.png' %}" alt="lesson-preview" class="lesson__img">
-                <div class="lesson__text-block">
-                    <h3 class="lesson__name">{{ course.title }}</h3>
-                    <p class="lesson__description">{{ course.description|truncatewords:15 }}</p>
-                </div>
-            </a>
-        </div>
-        {% endfor %}
+        {% if courses %}
+            {% for course in courses %}
+            <div class="lesson">
+                <a 
+                    class="link" 
+                    href="/courses/{{ course.id }}"
+                >
+                    <img src="{% static 'img/man-computer-book.png' %}" alt="lesson-preview" class="lesson__img">
+                    <div class="lesson__text-block">
+                        <h3 class="lesson__name">{{ course.title }}</h3>
+                        <p class="lesson__description">{{ course.description|truncatewords:15 }}</p>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+        {% else %}
+            <h3 style="text-align: center; margin-bottom: 80px;">
+                 Нет совподающих результатов
+            </h3>
+
+        {% endif %}
     </div>
 
 
