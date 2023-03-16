@@ -5,11 +5,7 @@
 @import "components/left_menu.css";
 @import "../courses/css/lesson.css";
 @import "../courses/css/modal-window.css";
-
-
 .no-style-btn {
   border: none;
   background: none;
-  margin: 0;
-  padding: 0;
 }

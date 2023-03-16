@@ -1,6 +1,21 @@
 {% load static %}
 {% include "../header.html" %}
 
+
+    <div class="order-form-container">
+        <form method="GET" action="{% url 'courses:index' %}">
+            <button class="order-form__btn">
+                Подтвердить
+            </button>
+            <input style="display: none;" name="search" value="{{ search }}">
+            <select name="select">
+                <!--Supplement an id here instead of using 'name'-->
+                <option value="title" selected>название</option>
+                <option value="cost">Цена по возрастанию</option>
+                <option value="-cost">Цена по убыванию</option>
+            </select>
+        </form>
+    </div>
     
 
     {% include "./new_lesson_menu.html" %}

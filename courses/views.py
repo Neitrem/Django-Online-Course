@@ -15,18 +15,25 @@ class CourseViewSet(ModelViewSet):
     
 def index(request):
     search_query = request.GET.get('search')
+    select = request.GET.get('select')
     
     if search_query:
         try:
             courses = Course.objects.filter(Q(title__contains=search_query) | Q(description__contains=search_query))
-            print(courses)
         except:
             courses = None
     else:
         courses = Course.objects.all()
-        
+
+    if select:
+        try:
+            courses = courses.order_by(select)
+        except:
+            print('Хуйня', select)
+    
+    
     form = CourseForm()
-    context = {'courses': courses, 'form': form}
+    context = {'courses': courses, 'form': form, 'search': search_query}
     return render(request, 'courses/index.html', context)
 
 def show(request, id):

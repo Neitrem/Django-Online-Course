@@ -10,3 +10,13 @@
 .lessons-list {
     margin: 40px 0;
 }
+
+.order-form-container {
+    margin-left: 60%;
+    
+}
+
+.order-form__btn {
+    border-radius: 15px;
+    border: 1px gray solid;
+}
